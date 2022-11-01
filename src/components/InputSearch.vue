@@ -14,12 +14,12 @@ export default {
 };
 </script>
 <template>
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Nhập thông tin cần tìm" :value="modelValue"
+    <div class="input-group ">
+        <input type="text" class="form-control bg-transparent" placeholder="Nhập thông tin cần tìm" :value="modelValue"
             @input="updateModelValue" @keyup.enter="submit" />
         <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" @click="submit">
-                <i class="fas fa-search"></i> Tìm kiếm
+                <font-awesome-icon icon="fa-solid fa-magnifying-glass" /> Tìm kiếm
             </button>
         </div>
     </div>

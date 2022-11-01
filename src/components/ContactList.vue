@@ -13,8 +13,8 @@ export default {
 };
 </script>
 <template>
-    <ul class="list-group">
-        <li class="list-group-item" v-for="(contact, index) in contacts" :key="contact._id"
+    <ul class="list-group bg-transparent">
+        <li class="list-group-item text-dark" v-for="(contact, index) in contacts" :key="contact._id"
             :class="{ active: index === activeIndex }" @click="updateActiveIndex(index)">
             {{ contact.name }}
         </li>

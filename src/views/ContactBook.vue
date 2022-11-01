@@ -1,6 +1,6 @@
 <template>
-    <div class="page row">
-        <div class="col-md-10">
+    <div class="page row mx-auto mt-3 justify-content-center">
+        <div class="col-md-12 text-center">
             <InputSearch v-model="searchText" />
         </div>
         <div class="mt-3 col-md-6">
@@ -13,23 +13,31 @@
             <p v-else>Không có liên hệ nào.</p>
             <div class="mt-3 row justify-content-around align-items-center">
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
-                    <i class="fas fa-redo"></i> Làm mới
+                    <font-awesome-icon icon="fa-solid fa-rotate-right" /> Làm mới
                 </button>
                 <button class="btn btn-sm btn-success" @click="goToAddContact">
-                    <i class="fas fa-plus"></i> Thêm mới
+                    <font-awesome-icon icon="fa-solid fa-plus" /> Thêm mới
                 </button>
                 <button class="btn btn-sm btn-danger" @click="removeAllContacts">
-                    <i class="fas fa-trash"></i> Xóa tất cả
+                    <font-awesome-icon icon="fa-solid fa-trash" /> Xóa tất cả
                 </button>
             </div>
         </div>
         <div class="mt-3 col-md-6">
+
             <div v-if="activeContact">
                 <h4>
                     Chi tiết Liên hệ
                     <i class="fas fa-address-card"></i>
                 </h4>
                 <ContactCard :contact="activeContact" />
+                <router-link :to="{
+                    name: 'contact.edit',
+                    params: { id: activeContact._id },
+                }">
+                    <span class="mt-2 badge badge-warning">
+                        <i class="fas fa-edit"></i> Hiệu chỉnh</span>
+                </router-link>
             </div>
         </div>
     </div>
